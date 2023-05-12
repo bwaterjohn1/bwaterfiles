@@ -1,0 +1,74 @@
+"/api/v1/user/login": {
+    "post": {
+        "produces": [
+            "application/json"
+        ],
+        "tags": [
+            "User"
+        ],
+        "summary": "test",
+        "parameters": [
+            {
+                "description": "bwatercompany.com",
+                "name": "data",
+                "in": "body",
+                "required": true,
+                "schema": {
+                    "$ref": "#/definitions/req.UserPW"
+                }
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "OK",
+                "schema": {
+                    "$ref": "#/definitions/api.Response"
+                }
+            }
+        }
+    }
+}
+},
+"definitions": {
+"api.Response": {
+    "type": "object",
+    "properties": {
+        "code": {
+            "type": "integer"
+        },
+        "data": {
+            "type": "object"
+        },
+        "msg": {
+            "type": "string"
+        }
+    }
+},
+"caches.KeyInfo": {
+    "type": "object",
+    "properties": {
+        "enable_key": {
+            "type": "boolean"
+        }
+    }
+},
+"caches.OSSInfo": {
+    "type": "object",
+    "properties": {
+        "enable_oss": {
+            "type": "boolean"
+        },
+        "oss_access_key_id": {
+            "type": "string"
+        },
+        "oss_access_key_secret": {
+            "type": "string"
+        },
+        "oss_bucket_name": {
+            "type": "string"
+        },
+        "oss_endpoint": {
+            "type": "string"
+        }
+    }
+},
